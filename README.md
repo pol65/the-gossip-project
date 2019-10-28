@@ -1,25 +1,13 @@
-# README
+The Gossip Project
+====================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A website created by **Zelig Bouillot** (@zelig), **Thomas Delage** (@thomas delage) & **Paul Poitrenaud** (@polo).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* test zeligbg
-
+How to use
+----------------------
+ 1. Clone our repo on your computer
+ 2. `$ bundle install`
+ 3. ` $ rails db:create` (if necessary)
+ 4. `$ rails db:migrate` (if necessary)
+ 5.  `$ rails db:seed`
+ 6.  Open http://localhost:3000/ and have fun
