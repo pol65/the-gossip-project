@@ -1,6 +1,7 @@
-<h1>Welcome test gossip numéro <%= params["page"] %> </h1>
+<h1>Fiche Gossip numéro <%= params["page"] %> </h1>
 
-<%= Gossip.find(@id).user.first_name%>
-<%= Gossip.find(@id).user.last_name%><br/><br/>
-<%= Gossip.find(@id).title%><br/><br/>
-<%= Gossip.find(@id).content%><br/><br/>
+
+<p> 
+Son auteur <a href="/user/<%=Gossip.find(@id).user_id %>/"> <%= Gossip.find(@id).user.first_name  %> <%= Gossip.find(@id).user.last_name%>   </a> <br/> <br/>
+Son titre : <%= Gossip.find(@id).title%><br/><br/>
+Son contenu <%= Gossip.find(@id).content%><br/><br/>

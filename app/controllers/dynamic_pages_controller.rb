@@ -4,5 +4,9 @@ class DynamicPagesController < ApplicationController
 
   def gossip
     @id = params[:page]
+  
+  end
+  def user
+    @user_id = params[:profile]
   end
 end

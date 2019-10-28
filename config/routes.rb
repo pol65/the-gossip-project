@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get 'welcome/:first_name', :to => 'dynamic_pages#welcome'
   post '/', :to => 'static_pages#index'
   get 'gossip/:page', :to => 'dynamic_pages#gossip'
+  get 'user/:profile', :to => 'dynamic_pages#user'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

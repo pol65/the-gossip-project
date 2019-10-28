@@ -3,10 +3,7 @@
 
 <% Gossip.all.each do |gossip| %>
 
-<%= gossip.user.first_name %>
-
-<%= gossip.title %>
-
-<a href="/gossip/<%= gossip.id %>/"> Lien vers le potin  </a> <br/>
+<p> L'auteur <a href="/user/<%=gossip.user_id %>/"> <%= gossip.user.first_name %> </a>
+a publié le gossip nommé <a href="/gossip/<%= gossip.id %>/"> <%= gossip.title %>   </a> <br/> </p>
 
 <% end %>
