@@ -1,2 +1,10 @@
 <h1>Welcome <%= params["first_name"] %> </h1>
-<p> </p>
+
+
+<% Gossip.all.each do |gossip| %>
+
+<%= gossip.user.first_name %>
+
+<%= gossip.title %> <br/>
+
+<% end %>
