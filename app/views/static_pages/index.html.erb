@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<h1>WELCOME</h1>
+<p> "Quel est ton nom ?" </p>
 
-<p>bite</p>
+
+<form action="/" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="text" name="first_name">
+<input type="submit" name="Envoyer"/>
+
+</form>
 
 </body>
 </html>
