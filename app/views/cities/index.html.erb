@@ -1,0 +1,8 @@
+<h1> Les villes </h1>
+
+<% @cities.each do |city|%>
+<h2><%= city.name%></h2>
+<p>
+  <a href="<%= city_path(city.id)%>" class="btn btn-primary">Voir les gossips de cette ville</a>
+</p>
+<% end %>

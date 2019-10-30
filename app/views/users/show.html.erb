@@ -1,0 +1,8 @@
+<p>Nom : <%= @user.first_name %> <%= @user.last_name %></p>
+<p>Description : <%= @user.description%></p>
+<p>Email : <%= @user.email%></p>
+<p>Age : <%= @user.age%></p>
+<p>Habite a : <%= @user.city.name%></p>
+<p>
+  <a href="<%= users_path %>" class="btn btn-primary">Revenir aux auteurs</a>
+</p>

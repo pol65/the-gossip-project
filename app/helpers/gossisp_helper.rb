@@ -1,0 +1,2 @@
+module GossispHelper
+end

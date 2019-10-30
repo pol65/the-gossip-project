@@ -1,0 +1,12 @@
+<h1> Les auteurs </h1>
+
+<% @users.each do |user|%>
+<h2><%= user.first_name%> <%= user.last_name%></h2>
+<p><%= user.description%></p>
+<p><%= user.email%></p>
+<p><%= user.age%></p>
+<p><%= user.city.name%></p>
+<p>
+  <a href="<%= user_path(user.id)%>" class="btn btn-primary">En savoir plus sur l'auteur</a>
+</p>
+<% end %>

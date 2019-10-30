@@ -1,0 +1,15 @@
+<p>Titre : <%= @gossip.title %></p>
+
+<p>Écrit par : <%= @gossip.user.first_name %> <%= @gossip.user.last_name %></p>
+
+<p>Qui habite à : <%= @gossip.user.city.name %></p>
+
+<h3><%= @gossip.content %></h3>
+
+<p>
+  <a href="<%= user_path(@gossip.user_id) %>" class="btn btn-primary">Aller sur la page de l'auteur</a>
+</p>
+
+<p>
+  <a href="<%= gossips_path %>" class="btn btn-primary">Revenir aux Gossips</a>
+</p>
