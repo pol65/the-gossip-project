@@ -17,7 +17,6 @@ class GossipsController < ApplicationController
     
         if @gossip.save 
           redirect_to root_path
-          flash[:notice] = "Ton Gossip a été sauvegardé avec succès !" 
          else
           render "new"
         end
@@ -30,5 +29,11 @@ class GossipsController < ApplicationController
         else
           render :edit
         end
+    end
+
+    def destroy
+        @gossip = Gossip.find(params[:id])
+        @gossip.destroy
+        redirect_to gossips_path
     end
 end
