@@ -1,1 +1,10 @@
 <p>Nom de la ville : <%= @cities.name %></p>
+
+
+<p> <% @cities.users.each do |user| %>
+    <% user.gossips.each do |gossip| %>
+    <h3><%= gossip.title %></h3>
+    <p><%= gossip.content %></p>
+    <% end %>
+    <% end %>
+</p>
