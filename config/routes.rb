@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :gossips
+  resources :cities
+  
   root 'dynamic_pages#welcome'
   get 'home', :to => 'static_pages#index'
   get 'team', :to => 'static_pages#team'
