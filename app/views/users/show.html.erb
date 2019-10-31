@@ -1,4 +1,4 @@
-<p>Nom : <%= @user.first_name %> <%= @user.last_name %></p>
+<body class="text-center"><h3><%= @user.first_name %> <%= @user.last_name %></h3>
 <p>Description : <%= @user.description%></p>
 <p>Email : <%= @user.email%></p>
 <p>Age : <%= @user.age%></p>
@@ -8,4 +8,4 @@
 </p>
 <p>
   <a href="<%= city_path(@user.city_id) %>" class="btn btn-primary">Aller sur la ville de l'auteur</a>
-</p>
+</p></body>
