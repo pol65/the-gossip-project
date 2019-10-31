@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+    before_action :authenticate_user, only: [:show]
+
     def index 
         @users = User.all
       end
@@ -18,4 +21,12 @@ class UsersController < ApplicationController
         @user.save!
         redirect_to root_path
     end
+
+    def authenticate_user
+        unless current_user
+          flash[:danger] = "Please log in."
+          redirect_to new_session_path
+        end
+      end
+
 end

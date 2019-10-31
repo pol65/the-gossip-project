@@ -1,5 +1,7 @@
 class GossipsController < ApplicationController
 
+  before_action :authenticate_user, only: [:show, :edit, :new]
+
     def index 
       @gossips = Gossip.all
     end
@@ -13,7 +15,7 @@ class GossipsController < ApplicationController
     end
 
     def create
-        @gossip = Gossip.create(title: params[:gossip_title], content: params[:gossip_content], user: User.find_by(id: session[:user_id])) 
+        @gossip = Gossip.create(title: params[:gossip_title], content: params[:gossip_content], user: current_user) 
         if @gossip.save 
           flash[:success] = "Gossip créé."
           redirect_to root_path
@@ -36,4 +38,14 @@ class GossipsController < ApplicationController
         @gossip.destroy
         redirect_to root_path
     end
+
+    private
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Please log in."
+      redirect_to new_session_path
+    end
+  end
+
 end
