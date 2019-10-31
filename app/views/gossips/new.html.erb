@@ -1,21 +1,20 @@
-<div class ='align-middle text-center'>
-    <div class="card m-5 p-5" style="height:300px">
-        <div class="card-body">
-
-            <form action= "<%= gossips_path %>" method="POST">
-
-                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-                <h3> Créé ton nouveau gossip !</h3>
-                
-                <div class="row justify-content-center">
-                    <p style = "width: 200px"> titre : <input type="text" name="gossip_title"></p>
-                </div>
-                <div class="row justify-content-center">
-                <p style = "width: 200px">Contenu : <input type="text" name="gossip_content"></p>
-                </div>
-              <p><button type="submit" class="btn btn-success">Valider</p>
-            </form>        
+<div class="jumbotron1">
+  <div class="container" style="text-align:center;">
+    <h3 class="display-3">Créé ton nouveau gossip !</h3>
+    <div id="new_gossip" class="card-body" >
+      <form action= "<%= gossips_path %>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="row justify-content-center">
+          <p style = "width: 200px"> titre : <input type="text" name="gossip_title"></p>
         </div>
+        <div class="row justify-content-center">
+          <textarea id="gossip_content" name="gossip_content" cols="45" rows="8" maxlength="65525" required="required"></textarea>
+        </div>
+        <p><input type="submit" value="Valider"></p>
+      </form>        
+<!--    <div class="card-footer text-muted">
+    </div>-->
     </div>
+  </div>
 </div>
+

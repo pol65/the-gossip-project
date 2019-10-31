@@ -1,12 +1,19 @@
-<h1> Les auteurs </h1>
+<center><h1> Nos auteurs </h1></center>
 
+<br><br>
+
+<div class="card-deck">
 <% @users.each do |user|%>
-<h2><%= user.first_name%> <%= user.last_name%></h2>
-<p><%= user.description%></p>
-<p><%= user.email%></p>
-<p><%= user.age%></p>
-<p><%= user.city.name%></p>
-<p>
-  <a href="<%= user_path(user.id)%>" class="btn btn-primary">En savoir plus sur l'auteur</a>
-</p>
-<% end %>
+
+<div class="col-sm-3 mb-2">
+ <div class="card" style="width: 18rem;">
+  <div class="card-body"> 
+    <h3 class="card-title"><%= user.first_name%> <%= user.last_name%></h3>
+    <h5 class="card-subtitle mb-2 text-muted"><%= user.age%> <%= user.city.name%></h5>
+    <h5 class="card-subtitle mb-2 text-muted"><%= user.email%></h5>
+    <p class="card-text"><%= user.description%> </p>
+      <a href="<%= user_path(user.id)%>" class="btn btn-primary">En savoir plus sur l'auteur</a>
+  </div>
+</div>
+</div>
+<% end %>   </div>
