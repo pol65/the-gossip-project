@@ -7,12 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+PrivateMessage.destroy_all
+AddGossip.destroy_all
+Tag.destroy_all
+Gossip.destroy_all
 User.destroy_all
 City.destroy_all
-Gossip.destroy_all
-Tag.destroy_all
-AddGossip.destroy_all
-PrivateMessage.destroy_all
+
+ActiveRecord::Base.connection.reset_pk_sequence!('cities')
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('gossips')
+ActiveRecord::Base.connection.reset_pk_sequence!('tags')
+ActiveRecord::Base.connection.reset_pk_sequence!('messages')
 
 cities = []
 10.times do
@@ -30,7 +36,8 @@ users = []
         description: Faker::Lorem.paragraphs(number: 1),
         email: Faker::Internet.email,
         age: Faker::Number.between(from: 13, to: 100),
-        city: cities.sample
+        city: cities.sample,
+        password: Faker::ElectricalComponents.active
   )
 end
 
