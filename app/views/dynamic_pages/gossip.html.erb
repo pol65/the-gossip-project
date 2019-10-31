@@ -1,7 +1,0 @@
-<h1>Fiche Gossip numéro <%= params["page"] %> </h1>
-
-
-<p> 
-Son auteur <a href="/user/<%=Gossip.find(@id).user_id %>/"> <%= Gossip.find(@id).user.first_name  %> <%= Gossip.find(@id).user.last_name%>   </a> <br/> <br/>
-Son titre : <%= Gossip.find(@id).title%><br/><br/>
-Son contenu <%= Gossip.find(@id).content%><br/><br/>
