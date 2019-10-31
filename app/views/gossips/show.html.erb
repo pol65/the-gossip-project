@@ -17,3 +17,12 @@
 <p>
   <a href="<%= @gossip %>" class="btn btn-danger" data-confirm="T'es sur ?" data-method="DELETE">Supprimer</a>
 </p>
+
+<% pre_like = @gossip.likes.find { |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+  <%= button_to 'Unlike', gossip_like_path(@gossip, pre_like), method: :delete %>
+<% else %>
+  <%= button_to 'Like', gossip_likes_path(@gossip), method: :gossip %>
+<% end %>
+<p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<%= @gossip.likes.count %> <%= (@gossip.likes.count) == 1 ? 'Like' : 'Likes'%></p>
