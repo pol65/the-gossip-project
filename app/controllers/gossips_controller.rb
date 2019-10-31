@@ -13,9 +13,9 @@ class GossipsController < ApplicationController
     end
 
     def create
-        @gossip = Gossip.new(title: params[:gossip_title], content: params[:gossip_content], user: User.first) 
-    
+        @gossip = Gossip.create(title: params[:gossip_title], content: params[:gossip_content], user: User.first)
         if @gossip.save 
+          flash[:success] = "Gossip créé."
           redirect_to root_path
          else
           render "new"
@@ -34,6 +34,6 @@ class GossipsController < ApplicationController
     def destroy
         @gossip = Gossip.find(params[:id])
         @gossip.destroy
-        redirect_to gossips_path
+        redirect_to root_path
     end
 end

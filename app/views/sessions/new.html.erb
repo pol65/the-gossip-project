@@ -1,0 +1,19 @@
+<div class ='align-middle text-center'>
+    <div class="card m-5 p-5" style="height:300px">
+        <div class="card-body">
+
+            <%= form_tag url_for(action:'create'), method: "post" do %>
+              <%= label_tag 'E-mail' %><br>
+              <%= text_field_tag 'email', @email%>
+             <br/> <br/>
+
+              <%= label_tag 'Mot de Passe' %><br>
+              <%= text_field_tag 'password', @password%>
+            <br/> <br/>
+
+          <%= submit_tag "Connexion" %>
+
+        <% end %>       
+        </div>
+    </div>
+</div>
