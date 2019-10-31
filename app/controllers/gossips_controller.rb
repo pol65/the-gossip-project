@@ -13,7 +13,7 @@ class GossipsController < ApplicationController
     end
 
     def create
-        @gossip = Gossip.create(title: params[:gossip_title], content: params[:gossip_content], user: User.first)
+        @gossip = Gossip.create(title: params[:gossip_title], content: params[:gossip_content], user: User.find_by(id: session[:user_id])) 
         if @gossip.save 
           flash[:success] = "Gossip créé."
           redirect_to root_path
