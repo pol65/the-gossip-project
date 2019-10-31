@@ -37,7 +37,7 @@ users = []
         email: Faker::Internet.email,
         age: Faker::Number.between(from: 13, to: 100),
         city: cities.sample,
-        password: Faker::ElectricalComponents.active
+        password: "password"
   )
 end
 
