@@ -1,10 +1,11 @@
-<p>Nom de la ville : <%= @cities.name %></p>
+<body><h1 class="text-center"><%= @cities.name %></h1>
 
 
 <p> <% @cities.users.each do |user| %>
     <% user.gossips.each do |gossip| %>
-    <h3><%= gossip.title %></h3>
+    <hr><h3><%= gossip.title %></h3>
     <p><%= gossip.content %></p>
     <% end %>
     <% end %>
-</p>
+      <a href="<%= cities_path %>" class="btn btn-primary">Revenir aux villes</a> 
+</p></body>
